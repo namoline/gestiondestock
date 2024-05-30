@@ -14,9 +14,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
+import lombok.experimental.SuperBuilder;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=true)
@@ -40,4 +42,8 @@ public class CommandeFournisseur extends AbstractEntity {
 	
 	@Column(name = "identreprise")
 	  private Integer idEntreprise;
+	  
+	@Column(name = "etatcommande")
+	@Enumerated(EnumType.STRING)
+	 private EtatCommande etatCommande;
 }

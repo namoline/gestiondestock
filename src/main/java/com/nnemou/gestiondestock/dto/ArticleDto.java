@@ -1,13 +1,18 @@
 package com.nnemou.gestiondestock.dto;
 
 import java.math.BigDecimal;
+
+import com.nnemou.gestiondestock.model.Article;
+import com.nnemou.gestiondestock.model.Category;
+
 import lombok.Builder;
 import lombok.Data;
 
-@Builder
 @Data
+@Builder
 public class ArticleDto {
-	
+	private Integer id;
+	 
 	private String codeArticle;
 	
 	
@@ -42,4 +47,46 @@ public class ArticleDto {
 
 	 
 	private List<MvtStkDto> lstMvtStks;*/
+	
+	public static ArticleDto fromEntity(Article article) {
+		
+		if(article == null) {
+			return null;
+		}
+		
+		return ArticleDto.builder()
+				.codeArticle(article.getCodeArticle())
+				.designation(article.getDesignation())
+				.id(article.getId())
+				.idEntreprise(article.getIdEntreprise())
+				.photo(article.getPhoto())
+				.prixUnitaireHt(article.getPrixUnitaireHt())
+				.prixUnitaireTtc(article.getPrixUnitaireTtc())
+				.tauxTva(article.getTauxTva())
+				.category(CategoryDto.fromEntity(article.getCategory()))			
+				.build();
+				
+	}
+	
+	
+	public static Article toEntity(ArticleDto articleDto) {
+		if(articleDto == null) {
+			return null;
+		}
+		return Article.builder()
+				.category(CategoryDto.toEntity(articleDto.getCategory()))
+				.codeArticle(articleDto.getCodeArticle())
+				.designation(articleDto.getDesignation())
+				.id(articleDto.getId())
+				.idEntreprise(articleDto.getIdEntreprise())	
+				.photo(articleDto.getPhoto())
+				.prixUnitaireHt(articleDto.prixUnitaireHt)
+				.prixUnitaireTtc(articleDto.getPrixUnitaireTtc())
+				.tauxTva(articleDto.getTauxTva())
+				.build();
+				
+		
+	}
+	
+	
 }

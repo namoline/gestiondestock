@@ -2,9 +2,12 @@ package com.nnemou.gestiondestock.model;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -13,9 +16,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=true)
@@ -34,8 +38,13 @@ public class MvtStk extends AbstractEntity{
 	private Article article;
 	
 	@Column(name="typemvt")
-	private TypeMvtStock typemvt;
+	@Enumerated(EnumType.STRING)
+	private TypeMvtStock typeMvt;
 	
 	@Column(name = "identreprise")
 	  private Integer idEntreprise;
+	
+	@Column(name = "sourcemvt")
+	@Enumerated(EnumType.STRING)
+	  private SourceMvtStk sourceMvt;
 }
