@@ -3,7 +3,7 @@ package com.nnemou.gestiondestock.dto;
 import java.math.BigDecimal;
 
 import com.nnemou.gestiondestock.model.Article;
-import com.nnemou.gestiondestock.model.Category;
+
 
 import lombok.Builder;
 import lombok.Data;

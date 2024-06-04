@@ -36,7 +36,7 @@ public class CategoryDto {
 				.code(category.getCode())
 				.designation(category.getDesignation())
 				.id(category.getId())
-				//.idEntreprise(category.getIdEntreprise())
+				.idEntreprise(category.getIdEntreprise())
 				.build();
 			
 		
@@ -55,7 +55,7 @@ public class CategoryDto {
 				.id(categoryDto.getId())
 				.code(categoryDto.getCode())
 				.designation(categoryDto.getDesignation())
-				//.idEntreprise(categoryDto.getIdEntreprise())
+				.idEntreprise(categoryDto.getIdEntreprise())
 				.id(categoryDto.getId())
 				.build();
 				

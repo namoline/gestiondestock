@@ -5,8 +5,6 @@ import java.util.List;
 
 import com.nnemou.gestiondestock.model.CommandeFournisseur;
 import com.nnemou.gestiondestock.model.EtatCommande;
-import com.nnemou.gestiondestock.model.Fournisseur;
-import com.nnemou.gestiondestock.model.LigneCommandeFournisseur;
 
 import lombok.Builder;
 import lombok.Data;

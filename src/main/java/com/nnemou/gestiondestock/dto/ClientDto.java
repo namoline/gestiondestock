@@ -4,8 +4,7 @@ package com.nnemou.gestiondestock.dto;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.nnemou.gestiondestock.model.Adresse;
-import com.nnemou.gestiondestock.model.Category;
+
 import com.nnemou.gestiondestock.model.Client;
 
 import lombok.Builder;
